@@ -359,6 +359,8 @@ def main():
         t['idxs'] = [vocab_index[w] if w in vocab_index else vocab_index['_OOV_'] for w in t['words']]
     for k, t in train_root_trees.items():
         t['idxs'] = [vocab_index[w] if w in vocab_index else vocab_index['_OOV_'] for w in t['words']]
+    for k, t in test_root_trees.items():
+        t['idxs'] = [vocab_index[w] if w in vocab_index else vocab_index['_OOV_'] for w in t['words']]
 
     # create the LSTM
     theano_seed = np.random.randint(2 ** 30)
